@@ -1,0 +1,25 @@
+<form id="editProfileForm">
+  <input type="text" id="name" placeholder="Enter new name" required />
+  <input type="text" id="phone" placeholder="Enter phone number" required />
+  <button type="submit">Update Profile</button>
+</form>
+
+<script>
+document.getElementById('editProfileForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const userId = "USER_ID_FROM_LOGIN"; // Replace this dynamically after login
+  const name = document.getElementById('name').value;
+  const phone = document.getElementById('phone').value;
+
+  const res = await fetch(`http://localhost:5000/api/profile/${userId}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, phone })
+  });
+
+  const data = await res.json();
+  console.log(data);
+  alert(data.message);
+});
+</script>

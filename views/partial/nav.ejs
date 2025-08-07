@@ -1,0 +1,28 @@
+<section>
+        <nav class="navbar">
+            <ul>
+            
+                <span class="logo">
+                <i class="fa-solid fa-star"></i>
+                <span class="logo-text">Adore</span>
+            </span>
+            <% if(!isAuthenticated){%>
+                <span class="right">
+                <li><a href="/login">Login</a></li>
+                <li><a href="/logout">Signup</a></li>
+            </span>
+            <% } else { %>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/service">Services</a></li>
+                <li><a href="/products">Products</a></li>
+                <li><a href="/contact">Contact-US</a></li>
+
+                <div class="right profile_img">
+                  <i class="fa-solid fa-user" class="icon_btn"></i>
+                </div>
+
+              <% } %>
+            </ul>
+        </nav>
+    </section>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
